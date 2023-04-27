@@ -1,6 +1,9 @@
 import 'dart:convert';
 import 'package:http/http.dart' as http;
+import 'package:news_app/Global.dart';
 import 'package:news_app/Modal_class.dart';
+
+
 
 class APIHelper {
   APIHelper._();
@@ -8,7 +11,7 @@ class APIHelper {
   static final APIHelper apiHelper = APIHelper._();
 
   Future<News?> fetchData() async {
-    String api = "https://inshorts.deta.dev/news?category=sports";
+    String api = "https://inshorts.deta.dev/news?category=${GlobalVar.cartegory}";
 
     http.Response res = await http.get(Uri.parse(api));
 
@@ -20,8 +23,6 @@ class APIHelper {
       News news = News.fromJson(json: decodedData);
 
       return news;
-    } else {
-      return null;
     }
   }
 }

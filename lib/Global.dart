@@ -1,5 +1,12 @@
-class GlobalVar{
+class GlobalVar {
   static List<String> title = [
-    "Sports" , "Science" , "War", "Government", "Politics", "Health", "Education"
+    "Sports",
+    "Science",
+    "War",
+    "Government",
+    "Politics",
+    "Health",
+    "Education"
   ];
+  static String cartegory = "";
 }

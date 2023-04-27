@@ -1,5 +1,6 @@
 class News {
   final List data;
+
   // final String category;
 
   News({
@@ -9,7 +10,7 @@ class News {
 
   factory News.fromJson({required Map json}) {
     return News(
-        data: json['data'],
+      data: json['data'],
       // category: json['category']
     );
   }

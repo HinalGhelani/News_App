@@ -14,52 +14,54 @@ class _DetailPageState extends State<DetailPage> {
 
     return Scaffold(
       appBar: AppBar(
-        title: Text("Detail Page"),
+        title: const Text("Detail Page"),
         centerTitle: true,
         backgroundColor: Colors.grey.shade900,
       ),
       body: Padding(
         padding: const EdgeInsets.all(15),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Text(
-              "${s['title']}",
-              style: const TextStyle(
-                  fontSize: 15,
-                  color: Colors.black,
-                  fontWeight: FontWeight.bold),
-            ),
-            const SizedBox(height: 20),
-            Container(
-              height: 200,
-              width: double.infinity,
-              decoration: BoxDecoration(
-                  image: DecorationImage(
-                      image: NetworkImage("${s['imageUrl']}"),
-                      fit: BoxFit.cover)),
-            ),
-            const SizedBox(height: 20),
-            Text(
-              "${s['date']}",
-              style: TextStyle(
+        child: SingleChildScrollView(
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Text(
+                "${s['title']}",
+                style: const TextStyle(
+                    fontSize: 25,
+                    color: Colors.black,
+                    fontWeight: FontWeight.bold),
+              ),
+              const SizedBox(height: 20),
+              Container(
+                height: 200,
+                width: double.infinity,
+                decoration: BoxDecoration(
+                    image: DecorationImage(
+                        image: NetworkImage("${s['imageUrl']}"),
+                        fit: BoxFit.cover)),
+              ),
+              const SizedBox(height: 20),
+              Text(
+                "${s['date']}",
+                style: const TextStyle(
+                    fontSize: 15,
+                    color: Colors.black,
+                    fontWeight: FontWeight.bold,
+                ),
+              ),
+              const SizedBox(height: 20),
+              Text(
+                "${s['time']}",
+                style: const TextStyle(
                   fontSize: 15,
                   color: Colors.black,
                   fontWeight: FontWeight.bold,
+                ),
               ),
-            ),
-            const SizedBox(height: 20),
-            Text(
-              "${s['time']}",
-              style: TextStyle(
-                fontSize: 15,
-                color: Colors.black,
-                fontWeight: FontWeight.bold,
-              ),
-            ),
-            const SizedBox(height: 20),
-            Text("${s['content']}")
-          ],
+              const SizedBox(height: 20),
+              Text("${s['content']}")
+            ],
+          ),
         ),
       ),
       backgroundColor: Colors.grey.shade300,
